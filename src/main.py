@@ -4,6 +4,8 @@ from tkinter import ttk
 import logging
 import os
 
+from src.classes.binary_search import *
+
 class TextConsole(tk.Text):
 
     def __init__(self, root):
@@ -69,6 +71,8 @@ class AppicationFrame(ttk.Frame):
 
     def on_one_clicked(self):
         self.console.log("One" + os.linesep)
+        bsearch = BinarySearch()
+        bsearch.run()
 
     def on_two_clicked(self):
         self.console.log("Two" + os.linesep)
@@ -78,8 +82,8 @@ class AppicationFrame(ttk.Frame):
 
 
 def main():
-    logging.basicConfig(level='DEBUG', filename='../guipython.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
-    logging.info("starting...")
+    logging.basicConfig(level='DEBUG', filename='../algorithms.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+    logging.info("starting session...")
     root = Tk()
     root.style = ttk.Style()
     root.style.theme_use("clam")
