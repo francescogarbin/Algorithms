@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import ttk
 import logging
 import os
+import platform
 
 from src.classes.binary_search import *
 
@@ -84,9 +85,10 @@ class AppicationFrame(ttk.Frame):
 def main():
     logging.basicConfig(level='DEBUG', filename='../algorithms.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
     logging.info("starting session...")
+    platforms = {"Linux":"clam", "Windows":"default", "Darwin":"aqua"}
     root = Tk()
     root.style = ttk.Style()
-    root.style.theme_use("clam")
+    root.style.theme_use(platforms[platform.system()])
     root.style.configure("My.TFrame", background='grey99')
     root.style.configure("My.TLabel", background='grey99')
     root.title("Algorithms")
