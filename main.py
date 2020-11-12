@@ -56,7 +56,6 @@ class AppicationFrame(ttk.Frame):
         self.console = None
         self.statusbar = None
         self.setup_ui()
-        logging.debug("ApplicationFrame::init() completed...")
 
     def setup_ui(self):
         self.grid(column=0, row=0, sticky=(N, W, E, S))
@@ -103,3 +102,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
