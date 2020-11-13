@@ -1,7 +1,9 @@
-class BinarySearch:
+from .algorithm_base import AlgorithmBase
 
-    def __init__(self, console_log):
-        self.console = console_log
+class BinarySearch(AlgorithmBase):
+
+    def __init__(self, console):
+        super().__init__(console)
 
     def binary_search(self, list, item):
         low = 0
@@ -20,11 +22,11 @@ class BinarySearch:
     def run(self):
         vals = [1, 3, 5, 7, 9]
         item = 5
-        self.console.log("\n*** Binary Search ***")
-        self.console.log("values[] = {}".format(vals))
-        self.console.log("running binary search to look for index of value {}...".format(item))
+        self._announce()
+        self._log("values[] = {}".format(vals))
+        self._log("running binary search to look for index of value {}...".format(item))
         result = self.binary_search(vals, item)
-        self.console.log("item {} found at index {}".format(item, result))
+        self._log("item {} found at index {}".format(item, result))
 
 
 

@@ -1,29 +1,31 @@
-class SelectionSort:
+from .algorithm_base import AlgorithmBase
 
-    def __init__(self, unsorted_arr, console_log):
-        self.unsorted_arr = unsorted_arr
-        self.console = console_log
+class SelectionSort(AlgorithmBase):
 
-    def find_smallest(self, arr):
-        smallest = arr[0]
+    def __init__(self, unsorted_arr, console):
+        super().__init__(console)
+        self._unsorted_arr = unsorted_arr
+
+    def find_smallest(self, array):
+        smallest = array[0]
         smallest_index = 0
-        for i in range(1, len(arr)):
-            if arr[i] < smallest:
-                smallest = arr[i]
+        for i in range(1, len(array)):
+            if array[i] < smallest:
+                smallest = array[i]
                 smallest_index = i
         return smallest_index
 
-    def selection_sort(self, arr):
-        newArr = []
-        for i in range(len(arr)):
-            smallest = self.find_smallest(arr)
-            newArr.append(arr.pop(smallest))
-        return newArr
+    def selection_sort(self, array):
+        new_array = []
+        for i in range(len(array)):
+            smallest = self.find_smallest(array)
+            new_array.append(array.pop(smallest))
+        return new_array
 
     def run(self):
-        self.console.log("\n*** Selection sort ***")
-        self.console.log("array[]={}".format(self.unsorted_arr))
-        self.console.log("running selection sort...")
-        sorted_arr = self.selection_sort(self.unsorted_arr)
-        self.console.log("sorted array[]={}".format(sorted_arr))
+        self._announce()
+        self._log("array[]={}".format(self._unsorted_arr))
+        self._log("running selection sort...")
+        sorted_array = self.selection_sort(self._unsorted_arr)
+        self._log("sorted array[]={}".format(sorted_array))
 

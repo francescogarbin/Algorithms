@@ -1,8 +1,10 @@
-class QuickSort:
+from .algorithm_base import AlgorithmBase
 
-    def __init__(self, unsorted_arr, console_log):
-        self.console = console_log
-        self.unsorted_arr = unsorted_arr
+class QuickSort(AlgorithmBase):
+
+    def __init__(self, unsorted_arr, console):
+        super().__init__(console)
+        self._unsorted_arr = unsorted_arr
 
     def quicksort(self, array):
         if len(array) < 2:
@@ -14,9 +16,9 @@ class QuickSort:
         return self.quicksort(less) + [pivot] + self.quicksort(greater)
 
     def run(self):
-        self.console.log("\n*** Quicksort ***")
-        self.console.log("unordered[] = {}".format(self.unsorted_arr))
-        self.console.log("running quicksort...")
-        result = self.quicksort(self.unsorted_arr)
-        self.console.log("sorted[] = {}".format(result))
+        self._announce()
+        self._log("unordered[] = {}".format(self._unsorted_arr))
+        self._log("running quicksort...")
+        result = self.quicksort(self._unsorted_arr)
+        self._log("sorted[] = {}".format(result))
         

@@ -16,7 +16,7 @@ class TextConsole(tk.Text):
 
     def log(self, message):
         self.configure(state='normal')
-        self.insert(INSERT, message + "\n")
+        self.insert(INSERT, message + os.linesep)
         self.configure(state='disabled')
 
 
@@ -26,7 +26,7 @@ class ConsoleFrame(ttk.Frame):
         super().__init__(root, borderwidth=1, padding="2")
         self.text_console = TextConsole(self)
         self.text_console.pack(fill=BOTH, expand=True)
-        self.text_console.log("Click a button to run an algorithm :-)" + os.linesep)
+        self.text_console.log("Click a button to run an algorithm :-)")
         self.pack(fill=BOTH, expand=True)
 
     def log(self, message):
