@@ -123,4 +123,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Jetbrains IDE files
 .idea/workspace.xml
+
+# vi swap files
+*.swp
+

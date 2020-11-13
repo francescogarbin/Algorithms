@@ -24,7 +24,7 @@ class BinarySearch(AlgorithmBase):
         item = 5
         self._announce()
         self._log("values[] = {}".format(vals))
-        self._log("running binary search to look for index of value {}...".format(item))
+        self._log("binary search index lookup of {}...".format(item))
         result = self.binary_search(vals, item)
         self._log("item {} found at index {}".format(item, result))
 
