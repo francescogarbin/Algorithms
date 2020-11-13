@@ -60,11 +60,14 @@ class AppicationFrame(ttk.Frame):
     def setup_ui(self):
         self.grid(column=0, row=0, sticky=(N, W, E, S))
         toolbar = ttk.Frame(self, padding="3")
-        button_one = ttk.Button(toolbar, text="Binary Search", command=self.on_binarysearch_clicked)
+        button_one = ttk.Button(toolbar, text="Binary Search", 
+                                command=self.on_binarysearch_clicked)
         button_one.pack(side=LEFT, padx=2)
-        button_two = ttk.Button(toolbar, text="Selection Sort", command=self.on_selectionsort_clicked)
+        button_two = ttk.Button(toolbar, text="Selection Sort", 
+                                command=self.on_selectionsort_clicked)
         button_two.pack(side=LEFT, padx=2)
-        button_three = ttk.Button(toolbar, text="Quicksort", command=self.on_quicksort_clicked)
+        button_three = ttk.Button(toolbar, text="Quicksort",
+                                  command=self.on_quicksort_clicked)
         button_three.pack(side=LEFT, padx=2)
         toolbar.pack(fill=X)
         self.console = ConsoleFrame(self)
@@ -87,7 +90,9 @@ class AppicationFrame(ttk.Frame):
 
 
 def main():
-    logging.basicConfig(level='DEBUG', filename='../algorithms.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+    logging.basicConfig(level='DEBUG', filename='../algorithms.log',
+                        filemode='w',
+                        format='%(name)s - %(levelname)s - %(message)s')
     logging.info("starting session...")
     root = Tk()
     root.style = ttk.Style()
@@ -99,6 +104,7 @@ def main():
     root.rowconfigure(0, weight=1)
     AppicationFrame(root, "My.TFrame")
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()

@@ -28,7 +28,3 @@ class BinarySearch(AlgorithmBase):
         result = self.binary_search(vals, item)
         self._log("item {} found at index {}".format(item, result))
 
-
-
-
-
